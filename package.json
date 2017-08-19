@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "lib/index",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 --port 8100",
+    "start": "webpack-dev-server --host 127.0.0.1 --port 8100",
     "build": "webpack -p --progress --colors"
   },
   "license": "MIT",

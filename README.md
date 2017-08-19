@@ -9,7 +9,7 @@ npm i
 npm start
 ```
 
-open http://localhost:8000/
+open http://127.0.0.1:8100/或者更改package.json中的ip和端口号并重新npm start
 
 ### Build
 
