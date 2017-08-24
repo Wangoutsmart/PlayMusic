@@ -1,7 +1,7 @@
 # antd-mobile with webpack
 ```shell
 basic proj demo with webpack@1
-这是一个基于React+antd-mobile的一个移动端手机音乐播放器
+这是一个基于React+antd-mobile的一个移动端手机音乐播放器。
 ```
 ### Install & Start
 
