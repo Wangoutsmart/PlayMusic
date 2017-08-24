@@ -7,9 +7,6 @@ export default class List extends React.Component {
 		bg:'',
 		list:[],
 	}
-	 ComponentwillMount(){
-            console.log('aaa')	
-	 }
 	 componentWillMount(){	
 	 	this.setState({bg:this.props.params.id})
 	 	 	let  _this=this;
@@ -37,9 +34,6 @@ export default class List extends React.Component {
 			     let num=Math.floor(Math.random()*5);
 			     let  dan=bigarr[num];
 		        _this.setState({list:dan});
-
-			  },
-			  error: function() {
 
 			  }
 			});
