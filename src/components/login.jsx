@@ -114,7 +114,7 @@ import $ from 'jquery';
 			<div className="container">
         <NavBar mode="light"
           onLeftClick={() => hashHistory.goBack()}
-          rightContent={<b onClick={() => this.setState({ open: true })}>...</b>}
+
         >
           {this.state.title}
         </NavBar>

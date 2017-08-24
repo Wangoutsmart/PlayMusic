@@ -14,8 +14,8 @@ class Paihang extends React.Component{
 	}
 	componentWillMount(){
 		var _this=this;
-		var zong=[];
-		var dan=[];
+		var allSong=[];
+		var singleSong=[];
 		$.ajax({
 		  type: "get",
 		  async: false,
@@ -27,15 +27,15 @@ class Paihang extends React.Component{
 		  success: function(data) {
 		    data.songlist.map((item,i)=>{
 		    	if(i!=0&&i%10==0){
-		    		zong.push(dan);
-		    		dan=[];
+		    		allSong.push(singleSong);
+		    		singleSong=[];
 		    	}
-		    	dan.push(item);
+		    	singleSong.push(item);
 		    	if(i==data.songlist.length-1){
-		    		zong.push(dan);
+		    		allSong.push(singleSong);
 		    	}
 		    })
-		    _this.setState({arrAll:zong});
+		    _this.setState({arrAll:allSong});
 		  },
 		  error: function() {
 
@@ -44,16 +44,8 @@ class Paihang extends React.Component{
 	
 	}
  render(){
- 		var str={
-			str2:{
-				'width':'100vw',
-				'height':'7vh',
-			},
-			str6:{
-				'width':'100vw',
-				'height':'1vh',
-			},
-			str4:{
+ 		var sty={
+			bigBox:{
 				'width':'95vw',
 				'height':'8vh',
 				'marginTop':'-.1rem',
@@ -62,11 +54,11 @@ class Paihang extends React.Component{
 				 'color':'#e1dac8',
 				  'fontSize':'.35rem'
 			},
-			str7:{
+			itemBox:{
 				"width":'100vw',
 				'height':'26vh',
 			},
-			str8:{
+			item:{
 				"width":'90vw',
 				'height':'26vh',
 				'paddingTop':'3vh',
@@ -74,25 +66,25 @@ class Paihang extends React.Component{
 				'marginRight':'5vw',
 				'borderTop':'1px solid #9a7d39',
 			},
-			str9:{
+			imgBox:{
 				'width':'30vw',
 				'height':'20vh',
 				'float':'left',
 				'background':'red',
 				
 			},
-			str10:{
+			songInfos:{
 				'width':'60vw',
 				'height':'20vh',
 				'float':'right'
 			},
-			str11:{
+			infoLeft:{
 				"width":'50vw',
 				'height':'20vh',
 				'float':'left',
 				'marginLeft':'5vw',
 			},
-			str12:{
+			icon:{
 				'width':'5vw',
 				'height':'20vh',
 				'float':'right',
@@ -100,7 +92,7 @@ class Paihang extends React.Component{
 			    'fontSize':'.4rem',
 				 'lineHeight':'20vh'
 			},
-			str13:{
+			songName:{
 				'color':'white',
 				'fontSize':'0.28rem',
 				'float':'left',
@@ -113,7 +105,7 @@ class Paihang extends React.Component{
 				'textOverflow':'ellipsis'
 				
 			},
-			str14:{
+			singerName:{
 				'display':' inlineBlock',
 				'color':'#b9ac8e',
 				'float':'left',
@@ -121,7 +113,7 @@ class Paihang extends React.Component{
 				'lineHeight':'6vh',
 				'paddingLeft':'1vw',
 			},
-			str15:{
+			songInfo:{
 				'width':'50vw',
 				'height':'6vh',
 				'lineHeight':'6vh',
@@ -131,35 +123,35 @@ class Paihang extends React.Component{
 		}
  	return(
  		<div className="Paihang">
-   		 <div style={str.str4}>
+   		 <div style={sty.bigBox}>
    		 <p style={{fontSize:'0.32rem'}}>巅峰榜</p>
    		 </div>
    		 {		
 	 		this.state.arrAll.map((item,i)=>{
-	 			return <div style={str.str7}>
+	 			return <div style={sty.itemBox}>
 	   		 	<Link to={"/phlist/"+i}>
-	   		    <div style={str.str8}>
-	   		            <div style={str.str9}>
+	   		    <div style={sty.item}>
+	   		            <div style={sty.imgBox}>
 	   		            <img src= {`http://imgcache.qq.com/music/photo/album_300/${item[0].albumId%100}/300_albumpic_${item[0].albumId}_0.jpg`} style={{'width':'100%','height':'100%'}}/>
 	   	               	 </div>
-	   	               	 <div style={str.str10}>
-	   	               	    <div style={str.str11}>
+	   	               	 <div style={sty.songInfos}>
+	   	               	    <div style={sty.infoLeft}>
 	   	               	       <ul>
-	   	               	          <li style={str.str15}>
-	   	               	             <p style={str.str13}>1.{item[0].songName}</p>
-	   	               	             <span style={str.str14}>{item[0].singerName}</span>
+	   	               	          <li style={sty.songInfo}>
+	   	               	             <p style={sty.songName}>1.{item[0].songName}</p>
+	   	               	             <span style={sty.singerName}>{item[0].singerName}</span>
 	   	               	          </li>
-	   	               	          <li style={str.str15}>
-	   	               	             <p style={str.str13}>2.{item[1].songName}</p>
-	   	               	             <span style={str.str14}>{item[1].singerName}</span>
+	   	               	          <li style={sty.songInfo}>
+	   	               	             <p style={sty.songName}>2.{item[1].songName}</p>
+	   	               	             <span style={sty.singerName}>{item[1].singerName}</span>
 	   	               	          </li>
-	   	               	           <li style={str.str15}>
-	   	               	             <p style={str.str13}>3.{item[2].songName}</p>
-	   	               	             <span style={str.str14}>{item[2].singerName}</span>
+	   	               	           <li style={sty.songInfo}>
+	   	               	             <p style={sty.songName}>3.{item[2].songName}</p>
+	   	               	             <span style={sty.singerName}>{item[2].singerName}</span>
 	   	               	          </li>
 	   	               	       </ul>
 	   	               	    </div>
-	   	               	    <Icon style={str.str12} type="right" />
+	   	               	    <Icon style={sty.icon} type="right" />
 	   	               	</div>
 	   		    </div>
 	   		    </Link>

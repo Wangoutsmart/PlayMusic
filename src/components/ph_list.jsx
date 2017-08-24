@@ -74,7 +74,7 @@ export default class PhList extends React.Component{
 				'textOverflow':'ellipsis',
 
   	        },
-  	        str12:{
+  	        icon:{
 				'width':'5vw',
 				'height':'5vh',
 				'position':'absolute',
@@ -101,7 +101,7 @@ export default class PhList extends React.Component{
 				    		<p style={sty.song}>
 				    			{it.singerName}
 				    		</p>
-				    		<Icon style={sty.str12} type="right" />
+				    		<Icon style={sty.icon} type="right" />
 				    	</div>
 				    </Link>
 					})

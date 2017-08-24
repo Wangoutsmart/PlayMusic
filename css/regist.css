@@ -18,6 +18,34 @@
 .am-list-body{
 	background: '';
 }
-.am-list-item.am-input-item{
+.am-list{
+	width:80%;
+	margin:0 auto;
 
+
+}
+div.am-list-body{
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0);
+}
+.am-list-item .am-input-label.am-input-label-5{color:#fff}
+.am-list-item .am-input-control input{color: #fff;}
+.am-list-item.am-input-item{
+background-color: rgba(0,0,0,.3);
+
+}
+div.container{
+	background:url(../src/components/bj1.jpg);
+font-family: "宋体";
+	background-size: cover;
+}
+.btn-container .btn{
+	margin: 0.5rem 0;
+}
+.btn-container .btn{
+	width:80%;
+	margin: 0.5rem auto;
+	height: 1rem;
+	font-size: 0.4rem;
+	font-family: "宋体";
 }

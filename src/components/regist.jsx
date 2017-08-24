@@ -6,7 +6,7 @@ import $ from 'jquery';
  	constructor(props){
 	    super(props);
 	    this.state = {
-	      title: 'app',
+	      title: '欢迎注册',
 	      open: false,
 	    };
 	  }
@@ -139,7 +139,7 @@ import $ from 'jquery';
 			 <div className="container">
 		        <NavBar mode="light"
 		          onLeftClick={() => hashHistory.goBack()}
-		          rightContent={<b onClick={() => this.setState({ open: true })}>...</b>}
+
 		        >
 		          {this.state.title}
 		        </NavBar>
@@ -166,9 +166,9 @@ import $ from 'jquery';
 			        	()=>{
 			        		this.goReg()
 			        	}
-			        }>注册</Button>
-			        <p style={{'textAlign':'center'}}>
-			        	已有账号?<a href="">请登录</a>
+			        }>注 册</Button>
+			        <p style={{'textAlign':'center',fontSize:'0.3rem'}}>
+			        	已有账号? <Link to='/login'>请登录</Link>
 			        </p>
 					</div>
 			        <Modal
